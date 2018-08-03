@@ -1,0 +1,188 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+MERGED from [com.google.android.gms:play-services-vision:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.0.0.aar\9ea14ecdcc69857e180639bd72a7ecb1\AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1d22cda7890ca05f678d8164468e76b2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:2:1-13:12
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.0.0.aar\80ccdcc02736ec40865f7009a6ed66f3\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.0.0.aar\d9ed09b0439e5fce458fcf2745d70084\AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1c11d36304a56f9cddfbf05fd4c4e137\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\33bc37843f565949da260f2ddc553842\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\58cead6bc5b31288f038a669c8d41a59\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3996f14bc909564458dd928c3c28302e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\232c88050e525d92222de324f603eeb3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\ca7da77a5bb1fbdacb158dcd76fdc0a9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\ccdbeadd8e4b26a31acc8cbd5e54bbd4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\6f5dd509a5386decd5bdf434c7890d9b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c71adcfdbae9070853cdb902ff2ce168\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bba343b56db574850bac572129ae5231\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\352cd138693ff05eefd65f57e407960b\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\de4c18d15b4ce24ced22754c2d91d999\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6f90abe488a6303f4ef8d64fc06be237\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\390981ffe133d1f2532881d747ee7ccf\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9a2a9dc38dc98d2b44a365ae14f7522e\AndroidManifest.xml:17:1-22:12
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+	package
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:3:5-62
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:1-35:12
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:2:11-69
+	android:installLocation
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:4:5-35
+uses-feature#android.hardware.camera
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:6:5-60
+	android:name
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:6:19-57
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:8:5-65
+	android:name
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:8:22-62
+application
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:10:5-33:19
+MERGED from [com.google.android.gms:play-services-vision:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.0.0.aar\9ea14ecdcc69857e180639bd72a7ecb1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.0.0.aar\9ea14ecdcc69857e180639bd72a7ecb1\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:5:5-12:19
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.0.0.aar\80ccdcc02736ec40865f7009a6ed66f3\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.0.0.aar\80ccdcc02736ec40865f7009a6ed66f3\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.0.0.aar\d9ed09b0439e5fce458fcf2745d70084\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.0.0.aar\d9ed09b0439e5fce458fcf2745d70084\AndroidManifest.xml:20:5-24:19
+	android:supportsRtl
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:16:9-37
+	android:label
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:15:9-37
+	android:hardwareAccelerated
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:13:9-43
+	android:fullBackupContent
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:12:9-42
+	android:icon
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:14:9-38
+	android:allowBackup
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:11:9-35
+	android:theme
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:17:9-47
+meta-data#com.google.android.gms.version
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:18:9-20:69
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.0.0.aar\d9ed09b0439e5fce458fcf2745d70084\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.0.0.aar\d9ed09b0439e5fce458fcf2745d70084\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:20:13-66
+	android:name
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:19:13-58
+meta-data#com.google.android.gms.vision.DEPENDENCIES
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:21:9-23:35
+	android:value
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:23:13-32
+	android:name
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:22:13-70
+activity#com.models.MainActivity
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:25:9-31:20
+	android:label
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:26:13-38
+	android:name
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:25:19-57
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:29:27-74
+activity#com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity
+ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:32:9-65
+	android:name
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml:32:19-53
+uses-sdk
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+MERGED from [com.google.android.gms:play-services-vision:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.0.0.aar\9ea14ecdcc69857e180639bd72a7ecb1\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-vision:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.0.0.aar\9ea14ecdcc69857e180639bd72a7ecb1\AndroidManifest.xml:4:5-42
+MERGED from [com.android.support:design:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1d22cda7890ca05f678d8164468e76b2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\1d22cda7890ca05f678d8164468e76b2\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:18:5-42
+MERGED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.0.0.aar\80ccdcc02736ec40865f7009a6ed66f3\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.0.0.aar\80ccdcc02736ec40865f7009a6ed66f3\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.0.0.aar\d9ed09b0439e5fce458fcf2745d70084\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.0.0.aar\d9ed09b0439e5fce458fcf2745d70084\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1c11d36304a56f9cddfbf05fd4c4e137\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\1c11d36304a56f9cddfbf05fd4c4e137\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\33bc37843f565949da260f2ddc553842\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\33bc37843f565949da260f2ddc553842\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\58cead6bc5b31288f038a669c8d41a59\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\58cead6bc5b31288f038a669c8d41a59\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3996f14bc909564458dd928c3c28302e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\3996f14bc909564458dd928c3c28302e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\232c88050e525d92222de324f603eeb3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\232c88050e525d92222de324f603eeb3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\ca7da77a5bb1fbdacb158dcd76fdc0a9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\ca7da77a5bb1fbdacb158dcd76fdc0a9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\ccdbeadd8e4b26a31acc8cbd5e54bbd4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\ccdbeadd8e4b26a31acc8cbd5e54bbd4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\6f5dd509a5386decd5bdf434c7890d9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\6f5dd509a5386decd5bdf434c7890d9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c71adcfdbae9070853cdb902ff2ce168\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\c71adcfdbae9070853cdb902ff2ce168\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bba343b56db574850bac572129ae5231\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\bba343b56db574850bac572129ae5231\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\352cd138693ff05eefd65f57e407960b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\352cd138693ff05eefd65f57e407960b\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\de4c18d15b4ce24ced22754c2d91d999\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\de4c18d15b4ce24ced22754c2d91d999\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6f90abe488a6303f4ef8d64fc06be237\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\6f90abe488a6303f4ef8d64fc06be237\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\390981ffe133d1f2532881d747ee7ccf\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\390981ffe133d1f2532881d747ee7ccf\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9a2a9dc38dc98d2b44a365ae14f7522e\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\9a2a9dc38dc98d2b44a365ae14f7522e\AndroidManifest.xml:20:5-44
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\Ofir\android-vision\visionSamples\ocr-codelab\ocr-reader-start\app\src\main\AndroidManifest.xml
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\play-services-base-9.0.0.aar\1cf671541e237aef163e7eb516120555\AndroidManifest.xml:20:19-85
+provider#com.google.firebase.provider.FirebaseInitProvider
+ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:7:9-11:39
+	android:authorities
+		ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:8:13-72
+	android:exported
+		ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:10:13-37
+	android:initOrder
+		ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:11:13-36
+	android:name
+		ADDED from [com.google.firebase:firebase-common:9.0.0] C:\Users\Ofir\.gradle\caches\transforms-1\files-1.1\firebase-common-9.0.0.aar\a9b8e29f5eaa7c3d72512936ac0e307a\AndroidManifest.xml:9:13-58
