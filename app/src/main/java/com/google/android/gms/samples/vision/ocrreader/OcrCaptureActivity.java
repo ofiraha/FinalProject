@@ -107,11 +107,11 @@ public final class OcrCaptureActivity extends AppCompatActivity {
         gestureDetector = new GestureDetector(this, new CaptureGestureListener());
         scaleGestureDetector = new ScaleGestureDetector(this, new ScaleListener());
 
-        Snackbar.make(graphicOverlay, "Tap to Speak. Pinch/Stretch to zoom",
-                Snackbar.LENGTH_LONG)
-                .show();
+//        Snackbar.make(graphicOverlay, "Tap to Speak. Pinch/Stretch to zoom",
+//                Snackbar.LENGTH_LONG)
+//                .show();
 
-        // TODO: Set up the Text To Speech engine.
+        // TODO: Set up the To Speech engine.
         TextToSpeech.OnInitListener listener =
                 new TextToSpeech.OnInitListener() {
                     @Override
@@ -180,13 +180,13 @@ public final class OcrCaptureActivity extends AppCompatActivity {
     private void createCameraSource(boolean autoFocus, boolean useFlash) {
         Context context = getApplicationContext();
 
-        // TODO: Create the TextRecognizer
+        // Create the TextRecognizer
         TextRecognizer textRecognizer = new TextRecognizer.Builder(context).build();
 
-        // TODO: Set the TextRecognizer's Processor.
+        // Set the TextRecognizer's Processor.
         textRecognizer.setProcessor(new OcrDetectorProcessor(graphicOverlay));
 
-        // TODO: Check if the TextRecognizer is operational.
+        // Check if the TextRecognizer is operational.
         if (!textRecognizer.isOperational()) {
             Log.w(TAG, "Detector dependencies are not yet available.");
 
@@ -201,7 +201,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
             }
         }
 
-        // TODO: Create the cameraSource using the TextRecognizer.
+        // Create the cameraSource using the TextRecognizer.
         cameraSource =
                 new CameraSource.Builder(getApplicationContext(), textRecognizer)
                         .setFacing(CameraSource.CAMERA_FACING_BACK)
@@ -329,7 +329,7 @@ public final class OcrCaptureActivity extends AppCompatActivity {
      * @return true if the tap was on a TextBlock
      */
     private boolean onTap(float rawX, float rawY) {
-        // TODO: Speak the text when the user taps on screen.
+        // Speak the text when the user taps on screen.
         OcrGraphic graphic = graphicOverlay.getGraphicAtLocation(rawX, rawY);
         TextBlock text = null;
         if (graphic != null) {

@@ -95,7 +95,7 @@ public class OcrGraphic extends GraphicOverlay.Graphic {
      */
     @Override
     public void draw(Canvas canvas) {
-        // TODO: Draw the text onto the canvas.
+        // Draw the text onto the canvas.
         if (mText == null) {
             return;
         }
