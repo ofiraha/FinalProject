@@ -3,6 +3,7 @@ package com.controllers;
 public class TextFileCreator {
 
     private String m_fileName;
+    Fil
 
     public TextFileCreator(String fileName){
         m_fileName = fileName;
