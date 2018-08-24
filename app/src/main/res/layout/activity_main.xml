@@ -1,29 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <!--<TextView-->
-        <!--android:id="@+id/tv_counter"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--android:text="0"-->
-        <!--android:textSize="@dimen/counter_text_size"-->
-        <!--android:textAlignment="center"-->
-        <!--android:layout_weight="1"-->
-        <!--/>-->
+    <!--android:id="@+id/tv_counter"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:text="0"-->
+    <!--android:textSize="@dimen/counter_text_size"-->
+    <!--android:textAlignment="center"-->
+    <!--android:layout_weight="1"-->
+    <!--/>-->
+
+    <Button
+        android:id="@+id/ToReadListButton"
+        android:layout_width="95dp"
+        android:layout_height="61dp"
+        android:layout_weight="1"
+        android:onClick="openToReadListActivity"
+        android:text="To Read List " />
 
     <Button
         android:id="@+id/start_button"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="82dp"
+        android:layout_height="107dp"
+        android:layout_weight="1"
         android:onClick="openOcrActivity"
         android:text="@string/start_reading"
-        android:textSize="@dimen/start_button_text_size"
-        android:layout_weight="1"
-        />
+        android:textSize="@dimen/start_button_text_size" />
 
 
 </LinearLayout>
