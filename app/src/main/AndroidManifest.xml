@@ -6,6 +6,8 @@
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -22,7 +24,7 @@
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="ocr" />
 
-        <activity android:name="com.models.MainActivity"
+        <activity android:name="com.controllers.MainActivity"
             android:label="Read Text">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,6 +32,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".OcrCaptureActivity"></activity>
+
+        <activity android:name="com.controllers.BookListActivity"></activity>
+
+
     </application>
 
 </manifest>
