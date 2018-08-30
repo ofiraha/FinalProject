@@ -1,16 +1,14 @@
-package com.models;
+package com.controllers;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.dbHandler.Book;
+import com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity;
 import com.google.android.gms.samples.vision.ocrreader.R;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,21 +22,19 @@ public class MainActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
     }
 
+    public void openToReadListActivity(View view)
+    {
+        Intent openToReadListActivity = new Intent(this, BookListActivity.class);
+       // openToReadListActivity.putExtra("KEY_TEXT", 5);
+        startActivity(openToReadListActivity);
+    }
+
+
     public void openOcrActivity(View view) {
 
-        // Create new post at /user-posts/$userid/$postid and at
-        // /posts/$postid simultaneously
-        String key = mDatabase.child("booksproject-41fe3").child("books").push().getKey();
-        Book newBook = new Book("book name", "book author");
-        Map<String, Object> booksValues = newBook.toMap();
 
-        Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("/books/" + key, booksValues);
-
-        mDatabase.updateChildren(childUpdates);
-
-//        Intent openOcrActivity = new Intent(this, OcrCaptureActivity.class);
-//        //openOcrActivity.putExtra("KEY_TEXT", 5);
-//        startActivity(openOcrActivity);
+       Intent openOcrActivity = new Intent(this, OcrCaptureActivity.class);
+       //openOcrActivity.putExtra("KEY_TEXT", 5);
+       startActivity(openOcrActivity);
     }
 }
