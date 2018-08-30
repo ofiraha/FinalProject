@@ -1,4 +1,4 @@
-#Sun Jul 22 15:00:02 GMT+02:00 2018
-base.0=C\:\\Users\\Ofir\\android-vision\\visionSamples\\ocr-codelab\\ocr-reader-start\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
+#Sat Aug 18 15:56:48 IDT 2018
+base.0=C\:\\Hadar\\FinalProject\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\9
 path.0=classes.dex
 renamed.0=classes.dex
