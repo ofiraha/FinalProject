@@ -1,4 +1,4 @@
-package com.dbObjects;
+package com.dbHandler;
 
 import com.google.firebase.database.Exclude;
 
