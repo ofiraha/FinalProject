@@ -14,6 +14,7 @@ import android.util.SparseArray;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,8 +31,11 @@ import java.util.ArrayList;
 
 public class BookListActivity extends Activity
 {
-    private static final int CAMERA_PHOTO = 111;
-    private Uri imageToUploadUri;
+    Button btnpic;
+    ImageView imgTakenPic;
+    private static final int CAM_REQUEST=1313;
+
+    //private Uri imageToUploadUri;
     ArrayAdapter<String> adapter;
     ArrayList<String> bookListForView;
     ArrayList<BookNode> bookList;
@@ -83,30 +87,39 @@ public class BookListActivity extends Activity
 
     }
     private void captureCameraImage() {
-        Intent chooserIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        startActivityForResult(intent,CAM_REQUEST);
+
+      /*  Intent chooserIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File f = new File(Environment.getExternalStorageDirectory(), "POST_IMAGE.jpg");
         chooserIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
         imageToUploadUri = Uri.fromFile(f);
-        startActivityForResult(chooserIntent, CAMERA_PHOTO);
+        startActivityForResult(chooserIntent, CAMERA_PHOTO);*/
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Bitmap bitmap;
+        imgTakenPic  = (ImageView)findViewById(R.id.imageViewForBookCover);
+        if(requestCode == CAM_REQUEST) {
+            bitmap = (Bitmap) data.getExtras().get("data");
+            imgTakenPic.setImageBitmap(bitmap);
 
-        if (requestCode == CAMERA_PHOTO && resultCode == Activity.RESULT_OK) {
-            if(imageToUploadUri != null){
-                Uri selectedImage = imageToUploadUri;
-                getContentResolver().notifyChange(selectedImage, null);
-               // Bitmap bitmap = getBitmap(imageToUploadUri.getPath());
-                //Frame frame = new Frame.Builder().setBitmap(bitmap).build();
-               //TextRecognizer textRecognizer = new TextRecognizer.Builder(this).build();
+            TextRecognizer textRecognizer = new TextRecognizer.Builder(getApplicationContext()).build();
+            Frame imageFrame = new Frame.Builder()
+                    .setBitmap(bitmap)                 // your image bitmap
+                    .build();
 
-               //SparseArray<TextBlock> item = textRecognizer.detect(frame);
+            String imageText = "";
+
+            SparseArray<TextBlock> textBlocks = textRecognizer.detect(imageFrame);
+
+            for (int i = 0; i < textBlocks.size(); i++) {
+                TextBlock textBlock = textBlocks.get(textBlocks.keyAt(i));
+                imageText = textBlock.getValue();                   // return string
             }
-            else{
-                Toast.makeText(this,"Error while capturing Image",Toast.LENGTH_LONG).show();
-            }
+
         }
     }
 
