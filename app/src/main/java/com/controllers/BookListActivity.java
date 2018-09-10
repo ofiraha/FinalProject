@@ -2,8 +2,11 @@ package com.controllers;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -43,8 +46,7 @@ import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookListActivity extends Activity
-{
+public class BookListActivity extends Activity implements ImageAdapter.OnItemClickListener {
     Button btnpic;
     ImageView imgTakenPic;
     private static final int CAM_REQUEST=1313;
@@ -56,7 +58,9 @@ public class BookListActivity extends Activity
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
+    private ValueEventListener mDBListener;
     private ProgressBar mProgressBar;
+    private ProgressBar mProgressCircle;
     private StorageTask mUploadTask;
     private RecyclerView mRecyclerView;
     private ImageAdapter mAdapter;
@@ -75,29 +79,41 @@ public class BookListActivity extends Activity
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("uploads");
         mStorageRef = FirebaseStorage.getInstance().getReference().child("uploads");
+        mProgressCircle = findViewById(R.id.progress_circle);
+
         mProgressBar = findViewById(R.id.progress_bar);
+        Drawable progressDrawable = mProgressBar.getProgressDrawable().mutate();
+        progressDrawable.setColorFilter(Color.BLUE, android.graphics.PorterDuff.Mode.SRC_IN);
+        mProgressBar.setProgressDrawable(progressDrawable);
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         mUploads = new ArrayList<>();
+        mAdapter = new ImageAdapter(BookListActivity.this, mUploads);
+        mRecyclerView.setAdapter(mAdapter);
+        mAdapter.onItemClickListener(BookListActivity.this);
 
-        mDatabaseRef.addValueEventListener(new ValueEventListener() {
+        mDBListener = mDatabaseRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                mUploads.clear();
+
                 for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
                     Upload upload = postSnapshot.getValue(Upload.class);
+                    upload.setKey(postSnapshot.getKey());
                     mUploads.add(upload);
                 }
 
-                mAdapter = new ImageAdapter(BookListActivity.this, mUploads);
-                mRecyclerView.setAdapter(mAdapter);
+                mAdapter.notifyDataSetChanged();
+                mProgressCircle.setVisibility(View.INVISIBLE);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(BookListActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                mProgressCircle.setVisibility(View.INVISIBLE);
             }
         });
     }
@@ -367,4 +383,41 @@ public class BookListActivity extends Activity
             }
 
     } //uploadFile()
+
+    @Override
+    public void onItemClick(int position) {
+        Toast.makeText(this, "Normal Click at position: " + position, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onCheckClick(int position) {
+        Toast.makeText(this, "CHECK item at position: " + position, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onUncheckClick(int position) {
+        Toast.makeText(this, "UNCHECK item at position: " + position, Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onDeleteClick(int position) {
+        Upload selectedItem = mUploads.get(position);
+        final String selectedKey = selectedItem.getKey();
+
+        StorageReference imgRef = FirebaseStorage.getInstance().getReferenceFromUrl(selectedItem.getImageUrl());
+        imgRef.delete().addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                mDatabaseRef.child(selectedKey).removeValue();
+                Toast.makeText(BookListActivity.this, "Item deleted", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mDatabaseRef.removeEventListener(mDBListener);
+    }
 }

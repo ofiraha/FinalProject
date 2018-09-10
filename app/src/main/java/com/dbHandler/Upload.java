@@ -1,8 +1,11 @@
 package com.dbHandler;
 
+import com.google.firebase.database.Exclude;
+
 public class Upload {
     private String mName;
     private String mImageUrl;
+    private String mKey;
 
     public Upload(){
         //empty cost needed
@@ -32,4 +35,10 @@ public class Upload {
     public void setImageUrl(String mImageUrl) {
         this.mImageUrl = mImageUrl;
     }
+
+    @Exclude
+    public String getKey() { return mKey; }
+
+    @Exclude
+    public void setKey(String key) { this.mKey = key; }
 }
