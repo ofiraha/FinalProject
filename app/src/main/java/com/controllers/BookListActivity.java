@@ -1,27 +1,26 @@
 package com.controllers;
 
 import android.app.Activity;
-import android.content.ContentResolver;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.Handler;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
-import android.util.Log;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.View;
-import android.webkit.MimeTypeMap;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.dbHandler.ImageAdapter;
 import com.dbHandler.Upload;
 import com.google.android.gms.samples.vision.ocrreader.R;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -29,8 +28,11 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
@@ -38,11 +40,8 @@ import com.google.firebase.storage.StorageTask;
 import com.google.firebase.storage.UploadTask;
 
 import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class BookListActivity extends Activity
 {
@@ -57,7 +56,11 @@ public class BookListActivity extends Activity
 
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
+    private ProgressBar mProgressBar;
     private StorageTask mUploadTask;
+    private RecyclerView mRecyclerView;
+    private ImageAdapter mAdapter;
+    private List<Upload> mUploads;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +75,31 @@ public class BookListActivity extends Activity
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("uploads");
         mStorageRef = FirebaseStorage.getInstance().getReference().child("uploads");
+        mProgressBar = findViewById(R.id.progress_bar);
+
+        mRecyclerView = findViewById(R.id.recycler_view);
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        mUploads = new ArrayList<>();
+
+        mDatabaseRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for(DataSnapshot postSnapshot : dataSnapshot.getChildren()){
+                    Upload upload = postSnapshot.getValue(Upload.class);
+                    mUploads.add(upload);
+                }
+
+                mAdapter = new ImageAdapter(BookListActivity.this, mUploads);
+                mRecyclerView.setAdapter(mAdapter);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(BookListActivity.this, databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void addListeners()
@@ -108,9 +136,12 @@ public class BookListActivity extends Activity
 
     }
     private void captureCameraImage() {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        startActivityForResult(intent,CAM_REQUEST);
-
+        if(mUploadTask != null && mUploadTask.isInProgress()){
+            Toast.makeText(BookListActivity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
+        } else {
+            Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            startActivityForResult(intent, CAM_REQUEST);
+        }
       /*  Intent chooserIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         File f = new File(Environment.getExternalStorageDirectory(), "POST_IMAGE.jpg");
         chooserIntent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(f));
@@ -124,6 +155,9 @@ public class BookListActivity extends Activity
         Bitmap bitmap;
         imgTakenPic  = (ImageView)findViewById(R.id.imageViewForBookCover);
         if(requestCode == CAM_REQUEST) {
+            mRecyclerView.setVisibility(View.GONE);
+            imgTakenPic.setVisibility(View.VISIBLE);
+
             bitmap = (Bitmap) data.getExtras().get("data");
             imgTakenPic.setImageBitmap(bitmap);
 
@@ -146,6 +180,7 @@ public class BookListActivity extends Activity
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             bitmapToUpload.compress(Bitmap.CompressFormat.JPEG, 100, baos);
             byte[] dataToUpload = baos.toByteArray();
+            if(imageText == "" || imageText == null){imageText = "NoName"; }
 
             uploadFile(dataToUpload, imageText);
         }
@@ -278,9 +313,6 @@ public class BookListActivity extends Activity
     }
 
     private void uploadFile(byte[] bookImg, final String bookName){
-        if(mUploadTask != null && mUploadTask.isInProgress()){
-            Toast.makeText(BookListActivity.this, "Upload in progress", Toast.LENGTH_SHORT).show();
-        } else {
             if (bookImg != null) {
                 //uploading the file
                 StorageReference fileRef = mStorageRef.child(bookName);
@@ -292,15 +324,29 @@ public class BookListActivity extends Activity
                                 handler.postDelayed(new Runnable() {
                                     @Override
                                     public void run() {
-                                        //TODO: mProgressBar.setProgress(0);
+                                        mProgressBar.setProgress(0);
+                                        imgTakenPic.setVisibility(View.GONE);
+                                        mRecyclerView.setVisibility(View.VISIBLE);
                                     }
                                 }, 5000);
 
                                 Toast.makeText(BookListActivity.this, "Upload Success", Toast.LENGTH_LONG).show();
-                                Upload upload = new Upload(bookName,
-                                        taskSnapshot.getMetadata().getReference().getDownloadUrl().getResult().toString());
-                                String uploadId = mDatabaseRef.push().getKey(); //creates new entry on db
-                                mDatabaseRef.child(uploadId).setValue(upload); //saves the file metadata on the new entry
+
+                                //add entry to current pic in db
+                                taskSnapshot.getMetadata().getReference().getDownloadUrl()
+                                        .addOnSuccessListener(new OnSuccessListener<Uri>() {
+                                    @Override
+                                    public void onSuccess(Uri uri) {
+                                        Upload upload = new Upload(bookName, uri.toString());
+                                        String uploadId = mDatabaseRef.push().getKey(); //creates new entry on db
+                                        mDatabaseRef.child(uploadId).setValue(upload); //saves the file metadata on the new entry
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception exception) {
+                                        //TODO: fail to get url
+                                    }
+                                });
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
@@ -313,12 +359,12 @@ public class BookListActivity extends Activity
                             @Override
                             public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                                 double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
-                                // TODO: mProgressBar.setProgress((int) progress);
+                                mProgressBar.setProgress((int) progress);
                             }
                         });
             } else {
                 Toast.makeText(this, "NoFile", Toast.LENGTH_LONG).show();
             }
-        }
+
     } //uploadFile()
 }
