@@ -14,6 +14,15 @@
     <!--/>-->
 
     <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="95dp"
+        android:layout_height="61dp"
+        android:layout_weight="1"
+        android:text="Logout"
+        android:textAllCaps="false"
+        android:textColor="#ffffff"/>
+
+    <Button
         android:id="@+id/ToReadListButton"
         android:layout_width="95dp"
         android:layout_height="61dp"
@@ -23,12 +32,12 @@
 
     <Button
         android:id="@+id/start_button"
-        android:layout_width="82dp"
-        android:layout_height="107dp"
+        android:layout_width="95dp"
+        android:layout_height="61dp"
         android:layout_weight="1"
         android:onClick="openOcrActivity"
         android:text="@string/start_reading"
-        android:textSize="@dimen/start_button_text_size" />
+        android:textAppearance="@style/TextAppearance.AppCompat" />
 
 
 </LinearLayout>
