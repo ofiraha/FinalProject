@@ -1,6 +1,7 @@
 package com.controllers;
 
 import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -11,10 +12,11 @@ import android.view.View;
 
 import com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity;
 import com.google.android.gms.samples.vision.ocrreader.R;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private static final int MY_CAMERA_REQUEST_CODE = 100;
     private DatabaseReference mDatabase;
@@ -23,6 +25,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+
+                Intent intent=new Intent(MainActivity.this,HomeActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK| Intent.FLAG_ACTIVITY_CLEAR_TASK);
+
+                startActivity(intent);
+            }
+        });
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         checkCameraPermission();
