@@ -2,10 +2,10 @@ package com.controllers;
 
 public class CountryData
 {
-    public static final String[] countryNames={"Israel"
+    public static final String[] countryNames={"Israel", "UK"
     };
 
     public static  final String[]countryAreaCodes={
-      "972"
+      "972", "44"
     };
 }

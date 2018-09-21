@@ -14,19 +14,22 @@
         android:fullBackupContent="false"
         android:hardwareAccelerated="true"
         android:icon="@drawable/icon"
-        android:label="OcrReaderApp"
+        android:label="Bookid"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat">
+        android:theme="@style/Theme.AppCompat.Light">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
         <meta-data
             android:name="com.google.android.gms.vision.DEPENDENCIES"
             android:value="ocr" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
 
         <activity
             android:name="com.controllers.HomeActivity"
-            android:label="Read Text">
+            android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -36,7 +39,8 @@
         <activity android:name="com.controllers.MainActivity" />
         <activity android:name=".OcrCaptureActivity" />
         <activity android:name="com.controllers.BookListActivity" />
-        <activity android:name="com.controllers.VerifyPhoneActivity"></activity>
+        <activity android:name="com.controllers.VerifyPhoneActivity" />
+        <activity android:name="com.controllers.VideoActivity"></activity>
     </application>
 
 </manifest>

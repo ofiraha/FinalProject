@@ -31,6 +31,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.vision.Frame;
 import com.google.android.gms.vision.text.TextBlock;
 import com.google.android.gms.vision.text.TextRecognizer;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -77,7 +78,8 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
         ListView listView=(ListView)findViewById(R.id.bookListView);
         listView.setAdapter(adapter);
 
-        mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("uploads");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("users")
+                .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("uploads");
         mStorageRef = FirebaseStorage.getInstance().getReference().child("uploads");
         mProgressCircle = findViewById(R.id.progress_circle);
 
@@ -233,12 +235,21 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
 
     @Override
     public void onCheckClick(int position) {
-        Toast.makeText(this, "CHECK item at position: " + position, Toast.LENGTH_SHORT).show();
+        Upload selectedItem = mUploads.get(position);
+        final String selectedKey = selectedItem.getKey();
+
+        selectedItem.setCheck(true);
+        mDatabaseRef.child(selectedKey).child("check").setValue(true);
     }
 
     @Override
     public void onUncheckClick(int position) {
         Toast.makeText(this, "UNCHECK item at position: " + position, Toast.LENGTH_SHORT).show();
+        Upload selectedItem = mUploads.get(position);
+        final String selectedKey = selectedItem.getKey();
+
+        selectedItem.setCheck(false);
+        mDatabaseRef.child(selectedKey).child("check").setValue(false);
 
     }
 

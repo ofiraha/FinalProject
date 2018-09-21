@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +45,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                 .fit()
                 .centerCrop()
                 .into(holder.imageView);
+        if(uploadCurrent.isCheck()){
+            holder.checkBox.setChecked(true);
+        }else{
+            holder.checkBox.setChecked(false);
+        }
     }
 
     @Override
@@ -55,12 +61,14 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener{
         public TextView textViewName;
         public ImageView imageView;
+        public CheckBox checkBox;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
 
             textViewName = itemView.findViewById(R.id.text_view_name);
             imageView = itemView.findViewById(R.id.image_view_upload);
+            checkBox = itemView.findViewById(R.id.check_box);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);

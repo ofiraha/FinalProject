@@ -33,20 +33,19 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_verify_phone);
 
-        mAuth=FirebaseAuth.getInstance();
-        progressBar=findViewById(R.id.progressbar);
-        editText=findViewById(R.id.editTextCode);
+        mAuth = FirebaseAuth.getInstance();
+        progressBar = findViewById(R.id.progressbar);
+        editText = findViewById(R.id.editTextCode);
 
-        String phoneNumber=getIntent().getStringExtra("phonenumber");
+        String phoneNumber = getIntent().getStringExtra("phonenumber");
         sendVerificationCode(phoneNumber);
 
         findViewById(R.id.buttonSignIn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String code=editText.getText().toString().trim();
+                String code = editText.getText().toString().trim();
 
-                if (code.isEmpty() || code.length()<6)
-                {
+                if (code.isEmpty() || code.length() < 6) {
                     editText.setError("Enter code...");
                     editText.requestFocus();
                     return;
@@ -55,7 +54,6 @@ public class VerifyPhoneActivity extends AppCompatActivity {
                 verifyCode(code);
             }
         });
-
     }
 
     private void verifyCode(String code)

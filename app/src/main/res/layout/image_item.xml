@@ -11,6 +11,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <CheckBox
+            android:id="@+id/check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:textAlignment="viewStart" />
+
         <TextView
             android:id="@+id/text_view_name"
             android:layout_width="wrap_content"

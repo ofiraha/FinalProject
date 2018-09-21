@@ -7,7 +7,6 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity;
@@ -57,10 +56,14 @@ public class MainActivity extends Activity {
 
 
     public void openOcrActivity(View view) {
-
-
         Intent openOcrActivity = new Intent(this, OcrCaptureActivity.class);
         //openOcrActivity.putExtra("KEY_TEXT", 5);
         startActivity(openOcrActivity);
     }
+
+    public void openVideo(View view) {
+        Intent openOcrActivity = new Intent(this, VideoActivity.class);
+        startActivity(openOcrActivity);
+    }
+
 }

@@ -35,4 +35,13 @@ public class DatabaseApi {
 
         mDatabase.updateChildren(childUpdates);
     }
+
+    public boolean checkIfUserExistInDb(String uid, DataSnapshot dataSnapshot){
+        for(DataSnapshot ds : dataSnapshot.getChildren()){
+            if(ds.getKey().equals(uid)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

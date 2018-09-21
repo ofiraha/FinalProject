@@ -6,6 +6,7 @@ public class Upload {
     private String mName;
     private String mImageUrl;
     private String mKey;
+    private boolean mCheck;
 
     public Upload(){
         //empty cost needed
@@ -18,6 +19,7 @@ public class Upload {
 
         this.mName = name;
         this.mImageUrl = imageUrl;
+        this.mCheck = false;
     }
 
     public String getName() {
@@ -41,4 +43,8 @@ public class Upload {
 
     @Exclude
     public void setKey(String key) { this.mKey = key; }
+
+    public boolean isCheck() { return mCheck; }
+
+    public void setCheck(boolean check) { this.mCheck = check; }
 }
