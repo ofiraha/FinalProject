@@ -43,7 +43,7 @@
             android:id="@+id/editTextMobile"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:backgroundTint="#86e0ce"
+            android:backgroundTint="@color/turquoise"
             android:digits="0123456789"
             android:drawablePadding="10dp"
             android:hint="enter your mobile number"

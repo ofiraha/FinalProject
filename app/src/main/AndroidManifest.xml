@@ -39,7 +39,8 @@
         <activity android:name="com.controllers.MainActivity" />
         <activity android:name=".OcrCaptureActivity" />
         <activity android:name="com.controllers.BookListActivity" />
-        <activity android:name="com.controllers.VerifyPhoneActivity" />
+        <activity android:name="com.controllers.VerifyPhoneActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name="com.controllers.VideoActivity"></activity>
     </application>
 
