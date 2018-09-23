@@ -40,7 +40,7 @@ public class VerifyPhoneActivity extends AppCompatActivity {
         String phoneNumber = getIntent().getStringExtra("phonenumber");
         sendVerificationCode(phoneNumber);
 
-        findViewById(R.id.buttonSignIn).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.button_verify).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String code = editText.getText().toString().trim();
