@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.controllers.VerificationSucceedActivity"
+    android:background="@android:color/white">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/home_background" />
+
+    <LinearLayout
+        android:layout_width="188dp"
+        android:layout_height="264dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_verification"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="150dp"
+            android:fontFamily="@font/chivo"
+            android:gravity="center"
+            android:text="Verification\nSucceeded!"
+            android:textColor="@color/grey"
+            android:textSize="20sp" />
+
+
+        <Button
+            android:id="@+id/verificationSucceedBtn"
+            android:layout_width="100dp"
+            android:layout_height="85dp"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/text_verification"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:background="@drawable/verification_succeed_styled_btn"
+            />
+    </LinearLayout>
+</RelativeLayout>
