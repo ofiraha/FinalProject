@@ -5,9 +5,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.samples.vision.ocrreader.OcrCaptureActivity;
 import com.google.android.gms.samples.vision.ocrreader.R;
@@ -15,15 +18,21 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Locale;
+
 public class MainActivity extends Activity {
 
     private static final int MY_CAMERA_REQUEST_CODE = 100;
     private DatabaseReference mDatabase;
+    private TextToSpeech mTTS;
+    private Button start_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        start_button = findViewById(R.id.start_button);
 
         findViewById(R.id.buttonLogout).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +48,23 @@ public class MainActivity extends Activity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
         checkCameraPermission();
+
+        //initialize the text ot speak engine
+        mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    mTTS.setLanguage(Locale.UK);
+                }
+            }
+        });
+
+    }
+
+
+
+    private void speak(String textToSpeak) {
+        mTTS.speak(textToSpeak, TextToSpeech.QUEUE_FLUSH, null);
     }
 
     public void checkCameraPermission() {
@@ -56,14 +82,26 @@ public class MainActivity extends Activity {
 
 
     public void openOcrActivity(View view) {
+        speak("please scan your book");
         Intent openOcrActivity = new Intent(this, OcrCaptureActivity.class);
         //openOcrActivity.putExtra("KEY_TEXT", 5);
         startActivity(openOcrActivity);
+
     }
 
     public void openVideo(View view) {
         Intent openOcrActivity = new Intent(this, VideoActivity.class);
         startActivity(openOcrActivity);
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (mTTS != null) {
+            mTTS.stop();
+            mTTS.shutdown();
+        }
+
+        super.onDestroy();
     }
 
 }

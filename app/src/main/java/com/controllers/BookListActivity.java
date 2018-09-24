@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.provider.MediaStore;
+import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -46,6 +47,7 @@ import com.google.firebase.storage.UploadTask;
 import java.io.ByteArrayOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class BookListActivity extends Activity implements ImageAdapter.OnItemClickListener {
     Button btnpic;
@@ -57,6 +59,7 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
     ArrayList<String> bookListForView;
     ArrayList<BookNode> bookList;
 
+    private TextToSpeech mTTS;
     private StorageReference mStorageRef;
     private DatabaseReference mDatabaseRef;
     private ValueEventListener mDBListener;
@@ -71,6 +74,16 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_list);
+
+        //initialize the text ot speak engine
+        mTTS = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if(status != TextToSpeech.ERROR) {
+                    mTTS.setLanguage(Locale.UK);
+                }
+            }
+        });
 
         bookListForView=new ArrayList<String>();
         adapter=new ArrayAdapter<String>(this,R.layout.book_list,R.id.bookItemText,bookListForView);
@@ -118,6 +131,8 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
                 mProgressCircle.setVisibility(View.INVISIBLE);
             }
         });
+
+
     }
 
     private void captureCameraImage() {
@@ -129,6 +144,9 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
         }
     }
 
+    private void speak(String textToSpeak) {
+        mTTS.speak(textToSpeak, TextToSpeech.QUEUE_FLUSH, null);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -169,6 +187,7 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
 
    public void addBookToList(View view)
     {
+        speak("please take a picture of the cover of the book you want to add");
         captureCameraImage();
     }
 
@@ -272,5 +291,11 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
     protected void onDestroy() {
         super.onDestroy();
         mDatabaseRef.removeEventListener(mDBListener);
+        if (mTTS != null) {
+            mTTS.stop();
+            mTTS.shutdown();
+        }
+
     }
+
 }
