@@ -42,6 +42,8 @@
         <activity android:name="com.controllers.VerifyPhoneActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar"/>
         <activity android:name="com.controllers.VideoActivity"></activity>
+
+        <activity android:name="com.controllers.VerificationSucceedActivity"></activity>
     </application>
 
 </manifest>
