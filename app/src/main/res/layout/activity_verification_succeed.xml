@@ -45,7 +45,6 @@
             android:layout_below="@+id/text_verification"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="100dp"
-            android:background="@drawable/verification_succeed_styled_btn"
             />
     </LinearLayout>
 </RelativeLayout>
