@@ -78,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
                     mDbUsersRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                            if(!DatabaseApi.getInstance().checkIfUserExistInDb(user.getPhoneNumber(), dataSnapshot)) {
+                            if(!DatabaseApi.getInstance().checkIfUserExistInDb(user.getUid(), dataSnapshot)) {
                                 //add user to db
                                 mDbUsersRef.child(user.getUid()).setValue(new User(user.getUid(), user.getPhoneNumber()));
                             }

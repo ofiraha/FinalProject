@@ -27,7 +27,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="350dp"
-        android:background="@drawable/v_pink"/>
+        android:layout_marginTop="390dp"
+        android:background="@drawable/v_turquoise"/>
 
 </RelativeLayout>
