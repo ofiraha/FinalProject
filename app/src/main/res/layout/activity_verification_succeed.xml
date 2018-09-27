@@ -7,44 +7,27 @@
     tools:context="com.controllers.VerificationSucceedActivity"
     android:background="@android:color/white">
 
-
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/home_background" />
+        android:background="@drawable/home_background"/>
 
-    <LinearLayout
-        android:layout_width="188dp"
-        android:layout_height="264dp"
-        android:layout_alignParentBottom="true"
+    <TextView
+        android:id="@+id/text_welcome_1"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="19dp"
-        android:orientation="vertical">
+        android:gravity="center"
+        android:fontFamily="@font/chivo"
+        android:text="Verification\nSucceeded!"
+        android:textColor="@color/grey"
+        android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/text_verification"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="150dp"
-            android:fontFamily="@font/chivo"
-            android:gravity="center"
-            android:text="Verification\nSucceeded!"
-            android:textColor="@color/grey"
-            android:textSize="20sp" />
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="350dp"
+        android:background="@drawable/v_pink"/>
 
-
-        <Button
-            android:id="@+id/verificationSucceedBtn"
-            android:layout_width="100dp"
-            android:layout_height="85dp"
-            android:layout_alignParentBottom="true"
-            android:layout_below="@+id/text_verification"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="100dp"
-            />
-    </LinearLayout>
 </RelativeLayout>
