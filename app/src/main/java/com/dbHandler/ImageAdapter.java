@@ -38,13 +38,13 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     @Override
     public void onBindViewHolder(@NonNull ImageViewHolder holder, int position) {
         Upload uploadCurrent = mUploads.get(position);
-        holder.textViewName.setText(uploadCurrent.getName());
+        holder.tvBookName.setText(uploadCurrent.getName());
         Picasso.get()
                 .load(uploadCurrent.getImageUrl())
-                .placeholder(R.drawable.winniethepooh)
+                .placeholder(R.drawable.emptybook)
                 .fit()
                 .centerCrop()
-                .into(holder.imageView);
+                .into(holder.ivBookImg);
         if(uploadCurrent.isCheck()){
             holder.checkBox.setChecked(true);
         }else{
@@ -59,16 +59,16 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
     public class ImageViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnCreateContextMenuListener, MenuItem.OnMenuItemClickListener{
-        public TextView textViewName;
-        public ImageView imageView;
+        public TextView tvBookName;
+        public ImageView ivBookImg;
         public CheckBox checkBox;
 
         public ImageViewHolder(View itemView) {
             super(itemView);
 
-            textViewName = itemView.findViewById(R.id.text_view_name);
-            imageView = itemView.findViewById(R.id.image_view_upload);
-            checkBox = itemView.findViewById(R.id.check_box);
+            tvBookName = (TextView) itemView.findViewById(R.id.book_name);
+            ivBookImg = (ImageView) itemView.findViewById(R.id.book_img);
+            checkBox = (CheckBox) itemView.findViewById(R.id.check_box);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);

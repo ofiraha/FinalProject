@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:background="@android:color/white">
+    android:padding="8dp"
+    android:background="@drawable/upper_bar">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="280px">
 
         <ProgressBar
             android:id="@+id/progress_circle"

@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.provider.MediaStore;
 import android.speech.tts.TextToSpeech;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
@@ -57,7 +58,6 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
     //private Uri imageToUploadUri;
     ArrayAdapter<String> adapter;
     ArrayList<String> bookListForView;
-    ArrayList<BookNode> bookList;
 
     private TextToSpeech mTTS;
     private StorageReference mStorageRef;
@@ -103,7 +103,7 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
 
         mRecyclerView = findViewById(R.id.recycler_view);
         mRecyclerView.setHasFixedSize(true);
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 
         mUploads = new ArrayList<>();
         mAdapter = new ImageAdapter(BookListActivity.this, mUploads);
@@ -120,6 +120,8 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
                     upload.setKey(postSnapshot.getKey());
                     mUploads.add(upload);
                 }
+
+                mUploads.add(new Upload("plusBtn", "https://firebasestorage.googleapis.com/v0/b/booksproject-41fe3.appspot.com/o/Asset%2015.png?alt=media&token=3f9f5d4d-0452-4bc6-986b-5047b58fbeb9"));
 
                 mAdapter.notifyDataSetChanged();
                 mProgressCircle.setVisibility(View.INVISIBLE);
@@ -194,7 +196,7 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
     private void uploadFile(byte[] bookImg, final String bookName){
             if (bookImg != null) {
                 //uploading the file
-                StorageReference fileRef = mStorageRef.child(bookName);
+                StorageReference fileRef = mStorageRef.child(bookName + "." + System.currentTimeMillis());
                 mUploadTask = fileRef.putBytes(bookImg)
                         .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                             @Override

@@ -32,7 +32,6 @@
         android:backgroundTint="@color/turquoise"
         android:digits="0123456789"
         android:drawablePadding="10dp"
-        android:hint="enter verification code"
         android:inputType="phone"
         android:letterSpacing="0.5"
         android:maxLength="6"

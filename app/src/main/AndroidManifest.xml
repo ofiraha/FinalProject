@@ -16,7 +16,7 @@
         android:icon="@drawable/logo"
         android:label="Bookid"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -39,11 +39,9 @@
         <activity android:name="com.controllers.MainActivity" />
         <activity android:name=".OcrCaptureActivity" />
         <activity android:name="com.controllers.BookListActivity" />
-        <activity android:name="com.controllers.VerifyPhoneActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"/>
-        <activity android:name="com.controllers.VideoActivity"></activity>
-        <activity android:name="com.controllers.VerificationSucceedActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar"></activity>
+        <activity android:name="com.controllers.VerifyPhoneActivity" />
+        <activity android:name="com.controllers.VideoActivity" />
+        <activity android:name="com.controllers.VerificationSucceedActivity"></activity>
     </application>
 
 </manifest>
