@@ -28,7 +28,7 @@
             android:resource="@array/preloaded_fonts" />
 
         <activity
-            android:name="com.controllers.HomeActivity"
+            android:name="com.activities.HomeActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -36,12 +36,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.controllers.MainActivity" />
+        <activity android:name="com.activities.MainActivity" />
         <activity android:name=".OcrCaptureActivity" />
-        <activity android:name="com.controllers.BookListActivity" />
-        <activity android:name="com.controllers.VerifyPhoneActivity" />
-        <activity android:name="com.controllers.VideoActivity" />
-        <activity android:name="com.controllers.VerificationSucceedActivity"></activity>
+        <activity android:name="com.activities.BookListActivity" />
+        <activity android:name="com.activities.VerifyPhoneActivity" />
+        <activity android:name="com.activities.VideoActivity" />
+        <activity android:name="com.activities.VerificationSucceedActivity"></activity>
     </application>
 
 </manifest>
