@@ -50,13 +50,9 @@ import java.util.List;
 import java.util.Locale;
 
 public class BookListActivity extends Activity implements ImageAdapter.OnItemClickListener {
-    Button btnpic;
+
     ImageView imgTakenPic;
     private static final int CAM_REQUEST=1313;
-
-    //private Uri imageToUploadUri;
-    ArrayAdapter<String> adapter;
-    ArrayList<String> bookListForView;
 
     private TextToSpeech mTTS;
     private StorageReference mStorageRef;
@@ -83,12 +79,6 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
                 }
             }
         });
-
-        bookListForView=new ArrayList<String>();
-        adapter=new ArrayAdapter<String>(this,R.layout.book_list,R.id.bookItemText,bookListForView);
-        //find the list view
-        ListView listView=(ListView)findViewById(R.id.bookListView);
-        listView.setAdapter(adapter);
 
         mDatabaseRef = FirebaseDatabase.getInstance().getReference().child("users")
                 .child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child("uploads");
@@ -132,8 +122,6 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
                 mProgressCircle.setVisibility(View.INVISIBLE);
             }
         });
-
-
     }
 
     private void captureCameraImage() {

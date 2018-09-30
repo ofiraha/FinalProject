@@ -1,5 +1,6 @@
 package com.activities;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,21 +15,19 @@ public class VideoActivity extends AppCompatActivity {
 
     private WebView mWevView;
     private VideoView mVideoView;
-    private Button mBtnPlay;
+    private Button mBtnPlay, mBtnPause;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
 
-//        mWevView = (WebView) findViewById(R.id.web_view);
-//        playVideo("1");
-
-
         mVideoView = (VideoView) findViewById(R.id.video_view);
         mBtnPlay = (Button)findViewById(R.id.play_btn);
+        mBtnPause = (Button)findViewById(R.id.pause_btn);
 
-        String str ="https://firebasestorage.googleapis.com/v0/b/booksproject-41fe3.appspot.com/o/library%2FThe%20Whale%20Who%20Ate%20Everything.mp4?alt=media&token=641dd415-ee5c-4cce-8db3-3b9aba512e43";
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("uri");
         Uri uri = Uri.parse(str);
 
         mVideoView.setVideoURI(uri);
@@ -38,6 +37,12 @@ public class VideoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mVideoView.start();
+            }
+        });
+        mBtnPause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mVideoView.pause();
             }
         });
     }

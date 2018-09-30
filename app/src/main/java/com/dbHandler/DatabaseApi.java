@@ -26,16 +26,6 @@ public class DatabaseApi {
         return instance;
     }
 
-    public void addBookToDb(Book newBook) {
-        String key = mDatabase.child(mainTblName).child(booksTblName).push().getKey();
-        Map<String, Object> booksValues = newBook.toMap();
-
-        Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("/" + booksTblName + "/" + key, booksValues);
-
-        mDatabase.updateChildren(childUpdates);
-    }
-
     public boolean checkIfUserExistInDb(String uid, DataSnapshot dataSnapshot){
         for(DataSnapshot ds : dataSnapshot.getChildren()){
             if(ds.getKey().equals(uid)) {

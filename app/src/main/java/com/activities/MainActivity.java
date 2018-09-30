@@ -86,9 +86,9 @@ public class MainActivity extends Activity {
 
     }
 
-    public void openVideo(View view) {
-        Intent openOcrActivity = new Intent(this, VideoActivity.class);
-        startActivity(openOcrActivity);
+    public void openLibrary(View view) {
+        Intent openLibraryActivity = new Intent(this, LibraryActivity.class);
+        startActivity(openLibraryActivity);
     }
 
     @Override
