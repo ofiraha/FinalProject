@@ -85,13 +85,11 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
 
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            menu.setHeaderTitle("Select Action");
-            MenuItem check = menu.add(Menu.NONE, 1, 1, "Check");
-            MenuItem uncheck = menu.add(Menu.NONE, 2, 2, "Uncheck");
-            MenuItem delete = menu.add(Menu.NONE, 3, 3, "Delete");
+
+            MenuItem check = menu.add(Menu.NONE, 1, 1, "√");
+            MenuItem delete = menu.add(Menu.NONE, 2, 2, "X");
 
             check.setOnMenuItemClickListener(this);
-            uncheck.setOnMenuItemClickListener(this);
             delete.setOnMenuItemClickListener(this);
         }
 
@@ -105,9 +103,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
                             mListener.onCheckClick(position);
                             return true;
                         case 2:
-                            mListener.onUncheckClick(position);
-                            return true;
-                        case 3:
                             mListener.onDeleteClick(position);
                             return true;
                     }
@@ -120,7 +115,6 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
     public interface OnItemClickListener{
         void onItemClick(int position);
         void onCheckClick(int position);
-        void onUncheckClick(int position);
         void onDeleteClick(int position);
     }
 
