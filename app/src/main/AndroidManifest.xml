@@ -29,19 +29,26 @@
 
         <activity
             android:name="com.activities.HomeActivity"
-            android:theme="@style/Theme.AppCompat.NoActionBar">
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.activities.MainActivity" />
+        <activity android:name="com.activities.MainActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name=".OcrCaptureActivity" />
-        <activity android:name="com.activities.BookListActivity" />
-        <activity android:name="com.activities.VerifyPhoneActivity" />
+        <activity android:name="com.activities.BookListActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.activities.VerifyPhoneActivity"
+            android:screenOrientation="portrait"/>
         <activity android:name="com.activities.VideoActivity" />
-        <activity android:name="com.activities.VerificationSucceedActivity"></activity>
+        <activity android:name="com.activities.VerificationSucceedActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name="com.activities.LibraryActivity"
+            android:screenOrientation="portrait"></activity>
     </application>
 
 </manifest>

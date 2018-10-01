@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,20 +11,33 @@
     <VideoView
         android:id="@+id/video_view"
         android:layout_width="match_parent"
-        android:layout_height="200dp" />
+        android:layout_height="250dp" />
 
-    <Button
-        android:id="@+id/play_btn"
+    <LinearLayout
+        android:id="@+id/btns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="play"
-        />
+        android:orientation="horizontal"
+        android:layout_below="@id/video_view"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true">
 
-    <Button
-        android:id="@+id/pause_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="pause"
-        />
+        <Button
+            android:id="@+id/play_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/play"
+            android:padding="5dp"
+            />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/pause_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/pause"
+            android:layout_marginRight="50dp"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
