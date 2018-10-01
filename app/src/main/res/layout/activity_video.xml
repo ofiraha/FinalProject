@@ -8,17 +8,31 @@
     tools:context="com.activities.VideoActivity"
     android:orientation="vertical">
 
-    <VideoView
-        android:id="@+id/video_view"
+    <RelativeLayout
+        android:id="@+id/video_layout"
         android:layout_width="match_parent"
-        android:layout_height="250dp" />
+        android:layout_height="220dp">
+
+        <VideoView
+            android:id="@+id/video_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ProgressBar
+            android:visibility="invisible"
+            android:id="@+id/progress_circle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
 
     <LinearLayout
         android:id="@+id/btns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@id/video_view"
+        android:layout_below="@id/video_layout"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true">
 
@@ -31,10 +45,10 @@
             />
 
         <Button
-            android:id="@+id/pause_btn"
+            android:id="@+id/replay_btn"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:background="@drawable/pause"
+            android:background="@drawable/replat_btn"
             android:layout_marginRight="50dp"
             />
 
