@@ -11,14 +11,12 @@
     <RelativeLayout
         android:id="@+id/video_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true">
+        android:layout_height="220dp">
 
         <VideoView
             android:id="@+id/video_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            />
+            android:layout_height="match_parent" />
 
         <ProgressBar
             android:visibility="invisible"
@@ -29,29 +27,28 @@
 
     </RelativeLayout>
 
-
     <LinearLayout
         android:id="@+id/btns"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:layout_centerHorizontal="true"
-        android:alpha="0.6">
+        android:layout_below="@id/video_layout"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true">
 
         <Button
             android:id="@+id/play_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:background="@drawable/play"
             android:padding="5dp"
             />
 
         <Button
             android:id="@+id/replay_btn"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/replay_btn"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:background="@drawable/replat_btn"
             android:layout_marginRight="50dp"
             />
 
