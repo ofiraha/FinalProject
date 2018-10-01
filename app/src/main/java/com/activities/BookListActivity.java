@@ -110,7 +110,7 @@ public class BookListActivity extends Activity implements ImageAdapter.OnItemCli
                     mUploads.add(upload);
                 }
 
-                mUploads.add(new Upload("plusBtn", "https://firebasestorage.googleapis.com/v0/b/booksproject-41fe3.appspot.com/o/plus.png?alt=media&token=98ae73ac-139f-458b-a152-08639d9f5660"));
+                mUploads.add(new Upload("plusBtn", "https://firebasestorage.googleapis.com/v0/b/bookid-ca15f.appspot.com/o/plus.png?alt=media&token=732a87ab-6788-45a8-adf9-1bb9884e224f"));
 
                 mAdapter.notifyDataSetChanged();
                 mProgressCircle.setVisibility(View.INVISIBLE);
